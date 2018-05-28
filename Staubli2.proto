@@ -5,12 +5,22 @@
 #InTerminator = "\r";
 #ExtraInput = Ignore;
 
-#error
-#{ in "NACK: %(\$1:ERRCMD.VAL)s is not successful.";
-#}
+error
+{ in "NACK: %(\$1:ERRCMD.VAL)s is not successful.";
+}
 
 #resetfault
 #{ out "write_resetfault";
 #  in "ACK:%s"; @mismatch{error;};
 #}
 #
+
+power
+{ out "power %d";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+gripper
+{ out "gripper %d";
+  in "ACK:%s"; @mismatch{error;};
+}

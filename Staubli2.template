@@ -1,7 +1,7 @@
-#record(stringin, "$(BL)$(CS8_2):ERRCMD") {
-#  field(DESC, "Error Command")
-#  field(PINI, "YES")  
-#}
+record(stringin, "$(BL)$(CS8_2):ERRCMD") {
+  field(DESC, "Error Command")
+  field(PINI, "YES")  
+}
 
 #record(ao,"$(BL)$(CS8_2):ResetFault")
 #{
@@ -53,6 +53,27 @@
 #  field(ONST, "Open")
 #}
 
+record(mbbo, "$(BL)$(CS8_2):Power")
+{
+  field(DESC,"Turn on or of robot power")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto power($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "Off")
+  field(ONVL, "1")
+  field(ONST, "On")
+}
+
+record(mbbo, "$(BL)$(CS8_2):Gripper")
+{
+  field(DESC,"Open and close gripper tool")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto gripper($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "Close")
+  field(ONVL, "1")
+  field(ONST, "Open")
+}
 #record(seq, "$(BL)$(CS8_2):_seq"){
 #  field(LNK1, "$(BL)$(CS8_2):GetAccel.PROC")
 #  field(LNK2, "$(BL)$(CS8_2):GetVelJ.PROC")
