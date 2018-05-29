@@ -24,3 +24,19 @@ gripper
 { out "gripper %d";
   in "ACK: gripper %d"; @mismatch{error;};
 }
+
+get_x
+{ out "getX "; 
+  in "ACK: getX %f"; @mismatch{error;};
+}
+
+get_y
+{ out "getY "; 
+  in "ACK: getY %f"; @mismatch{error;};
+}
+
+get_z
+{ out "getZ "; 
+  in "ACK: getZ %f"; @mismatch{error;};
+}
+
