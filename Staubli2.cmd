@@ -1,0 +1,1 @@
+/usr/local/epics/apps/Staubli2/iocBoot/iocStaubli2/st.cmd
