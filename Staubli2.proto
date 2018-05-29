@@ -17,10 +17,10 @@ error
 
 power
 { out "power %d";
-  in "ACK:%s"; @mismatch{error;};
+  in "ACK: power %d"; @mismatch{error;};
 }
 
 gripper
 { out "gripper %d";
-  in "ACK:%s"; @mismatch{error;};
+  in "ACK: gripper %d"; @mismatch{error;};
 }
