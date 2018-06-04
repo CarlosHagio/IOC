@@ -145,7 +145,34 @@ record(mbbo, "$(BL)$(CS8_2):RestartMove")
   field(ONST, "do not restart")
 }
 
-record(seq, "$(BL)$(CS8_2):_seq"){
+record(mbbo, "$(BL)$(CS8_2):SetFrame")
+{
+  field(DESC, "Choose frame")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto set_frame($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "world")
+  field(ONVL, "1")
+  field(ONST, "frHotel")
+  field(TWVL, "2")
+  field(TWST, "frBeam")
+  field(THVL, "3")
+  field(THST, "frRack")
+}
+
+record(mbbo, "$(BL)$(CS8_2):SetTool")
+{
+  field(DESC, "Choose tool")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto set_tool($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "flange")
+  field(ONVL, "1")
+  field(ONST, "tGripper")
+}
+
+record(seq, "$(BL)$(CS8_2):_seq")
+{
   field(LNK1, "$(BL)$(CS8_2):GetX.PROC")
   field(LNK2, "$(BL)$(CS8_2):GetY.PROC")
   field(LNK3, "$(BL)$(CS8_2):GetZ.PROC")

@@ -70,3 +70,13 @@ get_z
   in "ACK: getZ %f"; @mismatch{error;};
 }
 
+set_frame
+{ out "setFrame %d";
+  in "ACK: setFrame %d"; @mismatch{error;};
+}
+
+set_tool
+{ out "setTool %d";
+  in "ACK: setTool %d"; @mismatch{error;};
+}
+
