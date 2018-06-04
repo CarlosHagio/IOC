@@ -1,9 +1,9 @@
-#RadTimeout = 100;
-#PollPeriod = 100;
-#ReplyTimeout = 2000;
-#OutTerminator = "";
-#InTerminator = "\r";
-#ExtraInput = Ignore;
+RadTimeout = 100;
+PollPeriod = 100;
+ReplyTimeout = 2000;
+OutTerminator = "";
+InTerminator = "\r";
+ExtraInput = Ignore;
 
 error
 { in "NACK: %(\$1:ERRCMD.VAL)s is not successful.";
@@ -23,6 +23,36 @@ power
 gripper
 { out "gripper %d";
   in "ACK: gripper %d"; @mismatch{error;};
+}
+
+stop_move
+{ out "stopMove ";
+  in "ACK: stopMove"; @mismatch{error;};
+}
+
+restart_move
+{ out "restartMove ";
+  in "ACK: restartMove"; @mismatch{error;};
+}
+
+is_settled
+{ out "isSettled ";
+  in "ACK: isSettled %d"; @mismatch{error;};
+}
+
+move_x
+{ out "moveX %f";
+  in "ACK: moveX %f"; @mismatch{error;};
+}
+
+move_y
+{ out "moveY %f";
+  in "ACK: moveY %f"; @mismatch{error;};
+}
+
+move_z
+{ out "moveZ %f";
+  in "ACK: moveZ %f"; @mismatch{error;};
 }
 
 get_x

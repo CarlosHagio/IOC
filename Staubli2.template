@@ -17,12 +17,54 @@ record(stringin, "$(BL)$(CS8_2):ERRCMD") {
 #  field(OUT,"@Staubli2.proto move_omega($(BL)$(CS8_2)) $(PORT)")
 #}
 
+record(ao, "$(BL)$(CS8_2):MoveX")
+{
+  field(DESC, "Move in current x direction")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto move_x($(BL)$(CS8_2)) $(PORT)")
+}
+
+record(ao, "$(BL)$(CS8_2):MoveY")
+{
+  field(DESC, "Move in current y direction")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto move_y($(BL)$(CS8_2)) $(PORT)")
+}
+
+record(ao, "$(BL)$(CS8_2):MoveZ")
+{
+  field(DESC, "Move in current z direction")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto move_z($(BL)$(CS8_2)) $(PORT)")
+}
+
 #record(ai,"$(BL)$(CS8_2):GetOmega")
 #{
 #  field(DESC,"Get sixth joint angle Omega")
 #  field(DTYP,"stream")
 #  field(INP,"@Staubli2.proto get_omega($(BL)$(CS8_2)) $(PORT)")
 #}
+
+record(ai, "$(BL)$(CS8_2):GetX")
+{
+  field(DESC, "Get x position in current frame")
+  field(DTYP, "stream")
+  field(INP, "@Staubli2.proto get_x($(BL)$(CS8_2)) $(PORT)")
+}
+
+record(ai, "$(BL)$(CS8_2):GetY")
+{
+  field(DESC, "Get y position in current frame")
+  field(DTYP, "stream")
+  field(INP, "@Staubli2.proto get_y($(BL)$(CS8_2)) $(PORT)")
+}
+
+record(ai, "$(BL)$(CS8_2):GetZ")
+{
+  field(DESC, "Get z position in current frame")
+  field(DTYP, "stream")
+  field(INP, "@Staubli2.proto get_z($(BL)$(CS8_2)) $(PORT)")
+}
 
 #record(stringin,"$(BL)$(CS8_2):Here")
 #{
@@ -35,12 +77,18 @@ record(stringin, "$(BL)$(CS8_2):ERRCMD") {
 #{
 #  field(DESC,"check if robot is stopped")
 #  field(DTYP,"stream")
-#  field(INP,"@Staubli2.proto stopped($(BL)$(CS8_2)) $(PORT)")
-#  field(ZRVL, "0")
-#  field(ZRST, "Robo em movimento")
-#  field(ONVL, "1")
-#  field(ONST, "Robo parado")
 #}
+
+record(mbbi,"$(BL)$(CS8_2):CheckMoving")
+{
+  field(DESC,"check if robot is moving")
+  field(DTYP,"stream")
+  field(INP, "@Staubli2.proto is_settled($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "Not Moving")
+  field(ONVL, "1")
+  field(ONST, "Moving") 
+}
 
 #record(mbbo, "$(BL)$(CS8_2):GoHome")
 #{
@@ -73,6 +121,37 @@ record(mbbo, "$(BL)$(CS8_2):Gripper")
   field(ZRST, "Close")
   field(ONVL, "1")
   field(ONST, "Open")
+}
+
+record(mbbo, "$(BL)$(CS8_2):StopMove")
+{
+  field(DESC,"Interrupt robot movement")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto stop_move($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "stop")
+  field(ONVL, "1")
+  field(ONST, "do not stop")
+}
+
+record(mbbo, "$(BL)$(CS8_2):RestartMove")
+{
+  field(DESC,"Restart robot movement")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto restart_move($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "restart")
+  field(ONVL, "1")
+  field(ONST, "do not restart")
+}
+
+record(seq, "$(BL)$(CS8_2):_seq"){
+  field(LNK1, "$(BL)$(CS8_2):GetX.PROC")
+  field(LNK2, "$(BL)$(CS8_2):GetY.PROC")
+  field(LNK3, "$(BL)$(CS8_2):GetZ.PROC")
+  field(LNK4, "$(BL)$(CS8_2):CheckMoving.PROC")
+  field(PINI, "YES")
+  field(SCAN, "1 second")
 }
 #record(seq, "$(BL)$(CS8_2):_seq"){
 #  field(LNK1, "$(BL)$(CS8_2):GetAccel.PROC")
