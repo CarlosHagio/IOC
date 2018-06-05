@@ -25,6 +25,11 @@ gripper
   in "ACK: gripper %d"; @mismatch{error;};
 }
 
+pick_tool
+{ out "pickTool %d";
+  in "ACK: pickTool %d"; @mismatch{error;};
+}
+
 stop_move
 { out "stopMove ";
   in "ACK: stopMove"; @mismatch{error;};
@@ -33,6 +38,11 @@ stop_move
 restart_move
 { out "restartMove ";
   in "ACK: restartMove"; @mismatch{error;};
+}
+
+delete_move
+{ out "deleteMove ";
+  in "ACK: deleteMove"; @mismatch{error;};
 }
 
 is_settled

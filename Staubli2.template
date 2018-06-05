@@ -123,6 +123,17 @@ record(mbbo, "$(BL)$(CS8_2):Gripper")
   field(ONST, "Open")
 }
 
+record(mbbo, "$(BL)$(CS8_2):PickTool")
+{
+  field(DESC,"Release or pick tool")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto pick_tool($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "Pick tool")
+  field(ONVL, "1")
+  field(ONST, "Release tool")
+}
+
 record(mbbo, "$(BL)$(CS8_2):StopMove")
 {
   field(DESC,"Interrupt robot movement")
@@ -143,6 +154,15 @@ record(mbbo, "$(BL)$(CS8_2):RestartMove")
   field(ZRST, "restart")
   field(ONVL, "1")
   field(ONST, "do not restart")
+}
+
+record(mbbo, "$(BL)$(CS8_2):DeleteMove")
+{
+  field(DESC, "Clean movements stack")
+  field(DTYP, "stream")
+  field(OUT, "@Staubli2.proto delete_move($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "delete moves")
 }
 
 record(mbbo, "$(BL)$(CS8_2):SetFrame")
