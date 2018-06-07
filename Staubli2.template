@@ -21,21 +21,21 @@ record(ao, "$(BL)$(CS8_2):MoveX")
 {
   field(DESC, "Move in current x direction")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto move_x($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) move_x($(BL)$(CS8_2)) $(PORT)")
 }
 
 record(ao, "$(BL)$(CS8_2):MoveY")
 {
   field(DESC, "Move in current y direction")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto move_y($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) move_y($(BL)$(CS8_2)) $(PORT)")
 }
 
 record(ao, "$(BL)$(CS8_2):MoveZ")
 {
   field(DESC, "Move in current z direction")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto move_z($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) move_z($(BL)$(CS8_2)) $(PORT)")
 }
 
 #record(ai,"$(BL)$(CS8_2):GetOmega")
@@ -49,21 +49,21 @@ record(ai, "$(BL)$(CS8_2):GetX")
 {
   field(DESC, "Get x position in current frame")
   field(DTYP, "stream")
-  field(INP, "@Staubli2.proto get_x($(BL)$(CS8_2)) $(PORT)")
+  field(INP, "@$(PROTO) get_x($(BL)$(CS8_2)) $(PORT)")
 }
 
 record(ai, "$(BL)$(CS8_2):GetY")
 {
   field(DESC, "Get y position in current frame")
   field(DTYP, "stream")
-  field(INP, "@Staubli2.proto get_y($(BL)$(CS8_2)) $(PORT)")
+  field(INP, "@$(PROTO) get_y($(BL)$(CS8_2)) $(PORT)")
 }
 
 record(ai, "$(BL)$(CS8_2):GetZ")
 {
   field(DESC, "Get z position in current frame")
   field(DTYP, "stream")
-  field(INP, "@Staubli2.proto get_z($(BL)$(CS8_2)) $(PORT)")
+  field(INP, "@$(PROTO) get_z($(BL)$(CS8_2)) $(PORT)")
 }
 
 #record(stringin,"$(BL)$(CS8_2):Here")
@@ -83,7 +83,7 @@ record(mbbi,"$(BL)$(CS8_2):CheckMoving")
 {
   field(DESC,"check if robot is moving")
   field(DTYP,"stream")
-  field(INP, "@Staubli2.proto is_settled($(BL)$(CS8_2)) $(PORT)")
+  field(INP, "@$(PROTO) is_settled($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "Not Moving")
   field(ONVL, "1")
@@ -105,7 +105,7 @@ record(mbbo, "$(BL)$(CS8_2):Power")
 {
   field(DESC,"Turn on or of robot power")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto power($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) power($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "Off")
   field(ONVL, "1")
@@ -116,7 +116,7 @@ record(mbbo, "$(BL)$(CS8_2):Gripper")
 {
   field(DESC,"Open and close gripper tool")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto gripper($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) gripper($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "Close")
   field(ONVL, "1")
@@ -127,7 +127,7 @@ record(mbbo, "$(BL)$(CS8_2):PickTool")
 {
   field(DESC,"Release or pick tool")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto pick_tool($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) pick_tool($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "Pick tool")
   field(ONVL, "1")
@@ -138,7 +138,7 @@ record(mbbo, "$(BL)$(CS8_2):StopMove")
 {
   field(DESC,"Interrupt robot movement")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto stop_move($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) stop_move($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "stop")
   field(ONVL, "1")
@@ -149,7 +149,7 @@ record(mbbo, "$(BL)$(CS8_2):RestartMove")
 {
   field(DESC,"Restart robot movement")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto restart_move($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) restart_move($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "restart")
   field(ONVL, "1")
@@ -160,7 +160,7 @@ record(mbbo, "$(BL)$(CS8_2):DeleteMove")
 {
   field(DESC, "Clean movements stack")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto delete_move($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) delete_move($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "delete moves")
 }
@@ -169,7 +169,7 @@ record(mbbo, "$(BL)$(CS8_2):SetFrame")
 {
   field(DESC, "Choose frame")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto set_frame($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) set_frame($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "world")
   field(ONVL, "1")
@@ -184,7 +184,7 @@ record(mbbo, "$(BL)$(CS8_2):SetTool")
 {
   field(DESC, "Choose tool")
   field(DTYP, "stream")
-  field(OUT, "@Staubli2.proto set_tool($(BL)$(CS8_2)) $(PORT)")
+  field(OUT, "@$(PROTO) set_tool($(BL)$(CS8_2)) $(PORT)")
   field(ZRVL, "0")
   field(ZRST, "flange")
   field(ONVL, "1")
