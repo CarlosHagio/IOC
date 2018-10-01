@@ -1,0 +1,191 @@
+RadTimeout = 100;
+PollPeriod = 100;
+ReplyTimeout = 2000;
+OutTerminator = "";
+InTerminator = "\r";
+ExtraInput = Ignore;
+
+error
+{ in "NACK: %(\$1:ERRCMD.VAL)s is not successful.";
+}
+
+#resetfault
+#{ out "write_resetfault";
+#  in "ACK:%s"; @mismatch{error;};
+#}
+
+lifebit
+{ out "lifebit2";
+  in "ACK: lifebit"; @mismatch{error;};
+}
+
+set_on
+{ out "on";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+set_off
+{ out "off";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+set_vell
+{ out "vell %f";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+get_vell
+{ out "GetVelL";
+  in "ACK: GetVelL %f"; @mismatch{error;};
+}
+
+set_velj
+{ out "velj %f";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+get_velj
+{ out "GetVelJ";
+  in "ACK: GetVelJ %f"; @mismatch{error;};
+}
+
+set_velr
+{ out "velr %f";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+get_velr
+{ out "GetVelR";
+  in "ACK: GetVelR %f"; @mismatch{error;};
+}
+
+set_accel
+{ out "accel %d";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+get_accel
+{ out "GetAccel";
+  in "ACK: GetAccel %f"; @mismatch{error;};
+}
+pick_plate
+{ out "plate %d";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+
+return_plate
+{ out "ReturnPlate %d";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+
+pick_crystal
+{ out "crystal %d";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+set_tool
+{ out "SetTool %d";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+get_tool
+{ out "GetTool";
+  in "ACK: GetTool %d"; @mismatch{error;};
+}
+
+set_frame
+{ out "SetFrame %d";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+get_frame
+{  out "GetFrame";
+   in "ACK: GetFrame %d"; @mismatch{error;};
+}
+
+set_mode
+{ out "SetMode %d";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+change_tool
+{ out "ChangeTool";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+move_x
+{ out "movex %f";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+move_y
+{ out "movey %f";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+move_z
+{ out "movez %f";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+move_omega
+{ out "MoveOmega %f";
+  in "ACK:%s"; @mismatch{error;};
+}
+
+get_x
+{ out "GetX";
+  in "ACK: GetX %f"; @mismatch{error;};
+}
+
+get_y
+{ out "GetY";
+  in "ACK: GetY %f"; @mismatch{error;};
+}
+
+get_z
+{ out "GetZ";
+  in "ACK: GetZ %f"; @mismatch{error;};
+}
+
+get_omega
+{ out "GetOmega";
+  in "ACK: GetOmega %f"; @mismatch{error;};
+}
+
+here
+{ out "Here";
+  in "ACK: Here%s"; @mismatch{error;};
+}
+
+check_moving
+{ out "CheckMoving";
+  in "ACK: CheckMoving %d %d %d"; @mismatch{error;};
+}
+
+working_mode
+{ out "WorkingMode";
+  in "ACK: WorkingMode %d"; @mismatch{error;};
+}
+
+status
+{ out "Status";
+  in "ACK: Status %d"; @mismatch{error;};
+}
+
+stopped
+{ out "Stopped";
+  in "ACK: Stopped %d"; @mismatch{error;};
+}
+
+go_home
+{ out "gohome";
+  in "" ACK:%s"; @mistmatch{error;};
+}
+
+use_gripper
+{ out "UseGripper %d";
+  in "ACK:%s"; @mismatch{error;};
+}
