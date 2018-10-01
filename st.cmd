@@ -18,7 +18,8 @@ drvAsynIPPortConfigure ("Staubli2", "10.2.49.33:60000", 0, 0, 0)
 asynOctetSetOutputEos("Staubli2",0,"\r")
 
 ## Load record instances
-dbLoadRecords("db/Staubli2.template","BL=MXROB:,CS8_2=Staubli2,PORT=Staubli2")
+dbLoadRecords("db/Staubli2.template","BL=MXROB:,CS8_2=Staubli2,PORT=Staubli2", "PROTO=Staubli2.proto")
+
 #asynSetTraceIOMask("Staubli2",0,6)
 #asynSetTraceMask("Staubli2",0,9)
 
