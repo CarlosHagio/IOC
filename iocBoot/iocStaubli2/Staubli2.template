@@ -1,0 +1,226 @@
+record(stringin, "$(BL)$(CS8_2):ERRCMD") {
+  field(DESC, "Error Command")
+  field(PINI, "YES")  
+}
+
+#record(ao,"$(BL)$(CS8_2):ResetFault")
+#{
+#  field(DESC,"Reset Fault")
+#  field(DTYP,"stream")
+#  field(OUT,"@Staubli2.proto resetfault($(BL)$(CS8_2)) $(PORT)")
+#}
+
+#record(ao, "$(BL)$(CS8_2):MoveOmega")
+#{
+#  field(DESC,"Move sixth joint by Omega")
+#  field(DTYP,"stream")
+#  field(OUT,"@Staubli2.proto move_omega($(BL)$(CS8_2)) $(PORT)")
+#}
+
+record(ao, "$(BL)$(CS8_2):MoveX")
+{
+  field(DESC, "Move in current x direction")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) move_x($(BL)$(CS8_2)) $(PORT)")
+}
+
+record(ao, "$(BL)$(CS8_2):MoveY")
+{
+  field(DESC, "Move in current y direction")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) move_y($(BL)$(CS8_2)) $(PORT)")
+}
+
+record(ao, "$(BL)$(CS8_2):MoveZ")
+{
+  field(DESC, "Move in current z direction")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) move_z($(BL)$(CS8_2)) $(PORT)")
+}
+
+#record(ai,"$(BL)$(CS8_2):GetOmega")
+#{
+#  field(DESC,"Get sixth joint angle Omega")
+#  field(DTYP,"stream")
+#  field(INP,"@Staubli2.proto get_omega($(BL)$(CS8_2)) $(PORT)")
+#}
+
+record(ai, "$(BL)$(CS8_2):GetX")
+{
+  field(DESC, "Get x position in current frame")
+  field(DTYP, "stream")
+  field(INP, "@$(PROTO) get_x($(BL)$(CS8_2)) $(PORT)")
+}
+
+record(ai, "$(BL)$(CS8_2):GetY")
+{
+  field(DESC, "Get y position in current frame")
+  field(DTYP, "stream")
+  field(INP, "@$(PROTO) get_y($(BL)$(CS8_2)) $(PORT)")
+}
+
+record(ai, "$(BL)$(CS8_2):GetZ")
+{
+  field(DESC, "Get z position in current frame")
+  field(DTYP, "stream")
+  field(INP, "@$(PROTO) get_z($(BL)$(CS8_2)) $(PORT)")
+}
+
+#record(stringin,"$(BL)$(CS8_2):Here")
+#{
+#  field(DESC,"Get arm tool position")
+#  field(DTYP,"stream")
+#  field(INP,"@Staubli2.proto here($(BL)$(CS8_2)) $(PORT)")
+#}
+
+#record(mbbi,"$(BL)$(CS8_2):Stopped")
+#{
+#  field(DESC,"check if robot is stopped")
+#  field(DTYP,"stream")
+#}
+
+record(mbbi,"$(BL)$(CS8_2):CheckMoving")
+{
+  field(DESC,"check if robot is moving")
+  field(DTYP,"stream")
+  field(INP, "@$(PROTO) is_settled($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "Not Moving")
+  field(ONVL, "1")
+  field(ONST, "Moving") 
+}
+
+#record(mbbo, "$(BL)$(CS8_2):GoHome")
+#{
+#  field(DESC,"Sendo robot do default position")
+#  field(DTYP,"stream")
+#  field(OUT,"@Staubli2.proto go_home($(BL)$(CS8_2)) $(PORT)")
+#  field(ZRVL, "0")
+#  field(ZRST, "Close")
+#  field(ONVL, "1")
+#  field(ONST, "Open")
+#}
+
+record(mbbo, "$(BL)$(CS8_2):Power")
+{
+  field(DESC,"Turn on or of robot power")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) power($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "Off")
+  field(ONVL, "1")
+  field(ONST, "On")
+}
+
+record(mbbo, "$(BL)$(CS8_2):Gripper")
+{
+  field(DESC,"Open and close gripper tool")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) gripper($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "Close")
+  field(ONVL, "1")
+  field(ONST, "Open")
+}
+
+record(mbbo, "$(BL)$(CS8_2):PickTool")
+{
+  field(DESC,"Release or pick tool")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) pick_tool($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "Pick tool")
+  field(ONVL, "1")
+  field(ONST, "Release tool")
+}
+
+record(mbbo, "$(BL)$(CS8_2):StopMove")
+{
+  field(DESC,"Interrupt robot movement")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) stop_move($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "stop")
+  field(ONVL, "1")
+  field(ONST, "do not stop")
+}
+
+record(mbbo, "$(BL)$(CS8_2):RestartMove")
+{
+  field(DESC,"Restart robot movement")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) restart_move($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "restart")
+  field(ONVL, "1")
+  field(ONST, "do not restart")
+}
+
+record(mbbo, "$(BL)$(CS8_2):DeleteMove")
+{
+  field(DESC, "Clean movements stack")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) delete_move($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "delete moves")
+}
+
+record(mbbo, "$(BL)$(CS8_2):SetFrame")
+{
+  field(DESC, "Choose frame")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) set_frame($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "world")
+  field(ONVL, "1")
+  field(ONST, "frHotel")
+  field(TWVL, "2")
+  field(TWST, "frBeam")
+  field(THVL, "3")
+  field(THST, "frRack")
+}
+
+record(mbbo, "$(BL)$(CS8_2):SetTool")
+{
+  field(DESC, "Choose tool")
+  field(DTYP, "stream")
+  field(OUT, "@$(PROTO) set_tool($(BL)$(CS8_2)) $(PORT)")
+  field(ZRVL, "0")
+  field(ZRST, "flange")
+  field(ONVL, "1")
+  field(ONST, "tGripper")
+}
+
+record(seq, "$(BL)$(CS8_2):_seq")
+{
+  field(LNK1, "$(BL)$(CS8_2):GetX.PROC")
+  field(LNK2, "$(BL)$(CS8_2):GetY.PROC")
+  field(LNK3, "$(BL)$(CS8_2):GetZ.PROC")
+  field(LNK4, "$(BL)$(CS8_2):CheckMoving.PROC")
+  field(PINI, "YES")
+  field(SCAN, "1 second")
+}
+#record(seq, "$(BL)$(CS8_2):_seq"){
+#  field(LNK1, "$(BL)$(CS8_2):GetAccel.PROC")
+#  field(LNK2, "$(BL)$(CS8_2):GetVelJ.PROC")
+#  field(LNK3, "$(BL)$(CS8_2):GetVelL.PROC")
+#  field(LNK4, "$(BL)$(CS8_2):GetVelR.PROC")
+#  field(LNK5, "$(BL)$(CS8_2):GetOmega.PROC")
+#  field(LNK6, "$(BL)$(CS8_2):GetX.PROC")
+#  field(LNK7, "$(BL)$(CS8_2):GetY.PROC")
+#  field(LNK8, "$(BL)$(CS8_2):GetZ.PROC")
+#  field(PINI, "YES")
+#  field(SCAN, "1 second")
+#}
+
+#record(seq, "$(BL)$(CS8_2):_seq2"){
+#  field(LNK1, "$(BL)$(CS8_2):GetTool.PROC")
+#  field(LNK2, "$(BL)$(CS8_2):GetFrame.PROC")
+#  #field(LNK3, "$(BL)$(CS8_2):CheckMoving.PROC")
+#  field(LNK3, "$(BL)$(CS8_2):WorkingMode.PROC")
+#  field(LNK4, "$(BL)$(CS8_2):Status.PROC")
+#  field(LNK5, "$(BL)$(CS8_2):Stopped.PROC")
+#  field(PINI, "YES")
+#  field(SCAN, "1 second")
+#}
+
