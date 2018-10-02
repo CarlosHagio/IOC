@@ -3,127 +3,98 @@ record(stringin, "$(BL)$(CS8_2):ERRCMD") {
   field(PINI, "YES")  
 }
 
-#record(ao,"$(BL)$(CS8_2):ResetFault")
-#{
-#  field(DESC,"Reset Fault")
-#  field(DTYP,"stream")
-#  field(OUT,"@Staubli2.proto resetfault($(BL)$(CS8_2)) $(PORT)")
-#}
-
-#record(ao, "$(BL)$(CS8_2):LifeBit")
-#{
-#  field(DESC, "Keep alive")
-#  field(DTYP, "stream")
-#  field(SCAN, "2 second")
-#  field(OUT, "@Staubli2.proto lifebit($(BL)$(CS8_2)) $(PORT)")
-#}
-
-#record(ao,"$(BL)$(CS8_2):On")
-#{
-#  field(DESC,"Power On controller")
-#  field(DTYP,"stream")
-#  field(OUT,"@Staubli2.proto set_on($(BL)$(CS8_2)) $(PORT)")
-#}
-
-#record(ao,"$(BL)$(CS8_2):Off")
-#{
-#  field(DESC,"Power Off controller")
-#  field(DTYP,"stream")
-#  field(OUT,"@Staubli2.proto set_off($(BL)$(CS8_2)) $(PORT)")
-#}
-
 #############################################         MOVEMENTS BEGINNING        ##########################################
-record(bo, "$(BL)$CS8_2:MoveHomeToRack")
+record(bo, "$(BL)$(CS8_2):MoveHomeToRack")
 {
   field(DESC, "")
   field(DTYP, "stream")
-  field(OUT, "@$(PROTO) move_home_to_rack($(BL)$(CS8_2)) $(PORT)")i
+  field(OUT, "@$(PROTO) move_home_to_rack($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveRackToHome")
+record(bo, "$(BL)$(CS8_2)MoveRackToHome")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_rack_to_home($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveHomeToDewar")
+record(bo, "$(BL)$(CS8_2):MoveHomeToDewar")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_home_to_dewar($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveDewarToHome")
+record(bo, "$(BL)$(CS8_2):MoveDewarToHome")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_dewar_to_home($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveHomeToHotel")
+record(bo, "$(BL)$(CS8_2):MoveHomeToHotel")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_home_to_hotel($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveHotelToHome")
+record(bo, "$(BL)$(CS8_2):MoveHotelToHome")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_hotel_to_home($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveHomeToBeam")
+record(bo, "$(BL)$(CS8_2):MoveHomeToBeam")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_home_to_beam($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveBeamToHome")
+record(bo, "$(BL)$(CS8_2):MoveBeamToHome")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_beam_to_home($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveRackToHotel")
+record(bo, "$(BL)$(CS8_2):MoveRackToHotel")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_rack_to_hotel($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveHotelToRack")
+record(bo, "$(BL)$(CS8_2):MoveHotelToRack")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_hotel_to_rack($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveRackToDewar")
+record(bo, "$(BL)$(CS8_2):MoveRackToDewar")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_rack_to_dewar($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveDewarToRack")
+record(bo, "$(BL)$(CS8_2):MoveDewarToRack")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_dewar_to_rack($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveHotelToBeam")
+record(bo, "$(BL)$(CS8_2):MoveHotelToBeam")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_hotel_to_beam($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveBeamToHotel")
+record(bo, "$(BL)$(CS8_2):MoveBeamToHotel")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_beam_to_hotel($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveDewarToBeam")
+record(bo, "$(BL)$(CS8_2):MoveDewarToBeam")
 {
   field(DESC, "")
   field(DTYP, "stream")
   field(OUT, "@$(PROTO) move_dewar_to_beam($(BL)$(CS8_2)) $(PORT)")
 }
-record(bo, "$(BL)$CS8_2:MoveBeamToDewar")
+record(bo, "$(BL)$(CS8_2):MoveBeamToDewar")
 {
   field(DESC, "")
   field(DTYP, "stream")
@@ -397,7 +368,7 @@ record(bo, "$(BL)$(CS8_2):DeleteMove")
     field(OUT,  "@$(PROTO) delete_move($(BL)$(CS8_2)) $(PORT)")
 }
 
-record(bi, "$(BL)$(CS8_2):isSettled")
+record(bi, "$(BL)$(CS8_2):IsSettled")
 {
     field(DESC, "")
     field(DTYP, "stream")
@@ -405,7 +376,7 @@ record(bi, "$(BL)$(CS8_2):isSettled")
     field(ZNAM, "notSettled")
     field(ONAM, "Settled")
 }
-record(bi, "$(BL)$(CS8_2):isEmpty")
+record(bi, "$(BL)$(CS8_2):IsEmpty")
 {
     field(DESC, "")
     field(DTYP, "stream")
@@ -463,7 +434,7 @@ record(mbbo, "$(BL)$(CS8_2):SetTool")
     field(TWVL, "2")
     field(TWST, "tPlateGripper")
 }
-record(bo, "$(BL)$CS8_2:SetLoop")
+record(bo, "$(BL)$(CS8_2):SetLoop")
 {
   field(DESC, "")
   field(DTYP, "stream")
@@ -617,44 +588,44 @@ record(ai, "$(BL)$(CS8_2):GetX")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_x($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_x($(BL)$(CS8_2)) $(PORT)")
 }
 record(ai, "$(BL)$(CS8_2):GetY")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_y($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_y($(BL)$(CS8_2)) $(PORT)")
 }
 record(ai, "$(BL)$(CS8_2):GetZ")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_z($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_z($(BL)$(CS8_2)) $(PORT)")
 }
 record(ai, "$(BL)$(CS8_2):GetMoveBeamX")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_move_beam_x($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_move_beam_x($(BL)$(CS8_2)) $(PORT)")
 }
 record(ai, "$(BL)$(CS8_2):GetMoveBeamY")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_move_beam_y($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_move_beam_y($(BL)$(CS8_2)) $(PORT)")
 }
 record(ai, "$(BL)$(CS8_2):GetMoveBeamZ")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_move_beam_z($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_move_beam_z($(BL)$(CS8_2)) $(PORT)")
 }
 
 record(mbbi, "$(BL)$(CS8_2):GetFrame")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_frame($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_frame($(BL)$(CS8_2)) $(PORT)")
     field(ZRVL, "0")
     field(ZRST, "world")
     field(ONVL, "1")
@@ -670,7 +641,7 @@ record(mbbi, "$(BL)$(CS8_2):GetTool")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_tool($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_tool($(BL)$(CS8_2)) $(PORT)")
     field(ZRVL, "0")
     field(ZRST, "tOPS")
     field(ONVL, "1")
@@ -678,18 +649,18 @@ record(mbbi, "$(BL)$(CS8_2):GetTool")
     field(TWVL, "2")
     field(TWST, "tPlateGripper")
 }
-record(bi, "$(BL)$CS8_2:GetLoop")
+record(bi, "$(BL)$(CS8_2):GetLoop")
 {
   field(DESC, "")
   field(DTYP, "stream")
-  field(OUT, "@$(PROTO) get_loop($(BL)$(CS8_2)) $(PORT)")
+  field(INP, "@$(PROTO) get_loop($(BL)$(CS8_2)) $(PORT)")
   field(ZNAM, "empty")
 }
 record(mbbi, "$(BL)$(CS8_2):GetLoopA")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_loop_a($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_loop_a($(BL)$(CS8_2)) $(PORT)")
     field(ZRVL, "0")
     field(ZRST, "a0")
     field(ONVL, "1")
@@ -727,7 +698,7 @@ record(mbbi, "$(BL)$(CS8_2):GetLoopB")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_loop_b($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_loop_b($(BL)$(CS8_2)) $(PORT)")
     field(ZRVL, "0")
     field(ZRST, "b0")
     field(ONVL, "1")
@@ -765,7 +736,7 @@ record(mbbi, "$(BL)$(CS8_2):GetLoopC")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_loop_c($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_loop_c($(BL)$(CS8_2)) $(PORT)")
     field(ZRVL, "0")
     field(ZRST, "c0")
     field(ONVL, "1")
@@ -803,7 +774,7 @@ record(mbbi, "$(BL)$(CS8_2):GetPlate")
 {
     field(DESC, "")
     field(DTYP, "stream")
-    field(OUT,  "@$(PROTO) get_plate($(BL)$(CS8_2)) $(PORT)")
+    field(INP,  "@$(PROTO) get_plate($(BL)$(CS8_2)) $(PORT)")
     field(ZRVL, "0")
     field(ZRST, "empty")
     field(ONVL, "1")
@@ -829,398 +800,51 @@ record(mbbi, "$(BL)$(CS8_2):GetPlate")
 }
 #############################################         VARIABLES END         ##########################################
 
-
-
-record(ao,"$(BL)$(CS8_2):SetVelL")
-{
-  field(DESC,"Set Linear Velocity")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto set_vell($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ai,"$(BL)$(CS8_2):GetVelL")
-{
-  field(DESC,"Get Linear Velocity")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto get_vell($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ao,"$(BL)$(CS8_2):SetVelJ")
-{
-  field(DESC,"Set Joint Velocity")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto set_velj($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ai,"$(BL)$(CS8_2):GetVelJ")
-{
-  field(DESC,"Get Joint Velocity")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto get_velj($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ao,"$(BL)$(CS8_2):SetVelR")
-{
-  field(DESC,"Set Rotation Velocity")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto set_velr($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ai,"$(BL)$(CS8_2):GetVelR")
-{
-  field(DESC,"Get Rotation Velocity")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto get_velr($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ao,"$(BL)$(CS8_2):SetAccel")
-{
-  field(DESC,"Set Acceleration")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto set_accel($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ai,"$(BL)$(CS8_2):GetAccel")
-{
-  field(DESC,"Get Acceleration")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto get_accel($(BL)$(CS8_2)) $(PORT)")
-  #field(SCAN, "1 second")
-}
-
-record(ao,"$(BL)$(CS8_2):PickPlate")
-{
-  field(DESC,"Pick Plate N and move to Beam")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto pick_plate($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ao,"$(BL)$(CS8_2):ReturnPlate")
-{
-  field(DESC,"return Plate to N Hotel floor")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto return_plate($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ao,"$(BL)$(CS8_2):PickCrystal")
-{
-  field(DESC,"Get Crystal N and move to Beam")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto pick_crystal($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(mbbo, "$(BL)$(CS8_2):SetTool")
-{
-    field(DESC, "Set Robot Tool")
-    field(DTYP, "stream")
-    field(OUT,  "@Staubli2.proto set_tool($(BL)$(CS8_2)) $(PORT)")
-    field(ZRVL, "0")
-    field(ZRST, "Flange")
-    field(ONVL, "1")
-    field(ONST, "Ops")
-    field(TWVL, "2")
-    field(TWST, "Spike")
-    field(THVL, "3")
-    field(THST, "Gripper")
-    field(FRVL, "4")
-    field(FRST, "Plate1")
-    field(FVVL, "5")
-    field(FVST, "Plate2")
-    field(SXVL, "6")
-    field(SXST, "Plate3")
-    field(SVVL, "7")
-    field(SVST, "Sample")
-    field(EIVL, "8")
-    field(EIST, "Microscope")
-    field(NIVL, "9")
-    field(NIST, "Free")
-    field(TEVL, "10")
-    field(TEST, "Free")
-    field(ELVL, "11")
-    field(ELST, "Free")
-    field(TVVL, "12")
-    field(TVST, "Free")
-    field(TTVL, "13")
-    field(TTST, "Free")
-    field(FTVL, "14")
-    field(FTST, "Free")
-    field(FFVL, "15")
-    field(FFST, "Free")
-}
-
-record(mbbi, "$(BL)$(CS8_2):GetTool")
-{
-	field(DESC, "Get Robot Tool")
-	field(DTYP, "stream")
-	field(INP,"@Staubli2.proto get_tool($(BL)$(CS8_2)) $(PORT)")
-	field(ZRVL, "0")
-    	field(ZRST, "Flange")
-    	field(ONVL, "1")
-    	field(ONST, "Ops")
-    	field(TWVL, "2")
-    	field(TWST, "Spike")
-    	field(THVL, "3")
-    	field(THST, "Gripper")
-    	field(FRVL, "4")
-    	field(FRST, "Plate1")
-    	field(FVVL, "5")
-    	field(FVST, "Plate2")
-    	field(SXVL, "6")
-    	field(SXST, "Plate3")
-    	field(SVVL, "7")
-    	field(SVST, "Sample")
-    	field(EIVL, "8")
-    	field(EIST, "Microscope")
-}
-
-record(mbbo, "$(BL)$(CS8_2):SetFrame")
-{
-    field(DESC, "Set Robot frame")
-    field(DTYP, "stream")
-    field(OUT,  "@Staubli2.proto set_frame($(BL)$(CS8_2)) $(PORT)")
-    field(ZRVL, "0")
-    field(ZRST, "Home")
-    field(ONVL, "1")
-    field(ONST, "Hotel")
-    field(TWVL, "2")
-    field(TWST, "Beam")
-    field(THVL, "3")
-    field(THST, "Dewar")
-    field(FRVL, "4")
-    field(FRST, "Free")
-}
-
-record(mbbi, "$(BL)$(CS8_2):GetFrame")
-{
-    field(DESC, "Get Robot frame")
-    field(DTYP, "stream")
-    field(INP,  "@Staubli2.proto get_frame($(BL)$(CS8_2)) $(PORT)")
-    field(ZRVL, "0")
-    field(ZRST, "Home")
-    field(ONVL, "1")
-    field(ONST, "Hotel")
-    field(TWVL, "2")
-    field(TWST, "Beam")
-    field(THVL, "3")
-    field(THST, "Dewar")
-    field(FRVL, "4")
-    field(FRST, "Free")
-    #field(FLNK, "$(BL):$(CS8_2):SetMode")
-}
-
-record(mbbo, "$(BL)$(CS8_2):SetMode")
-{
-    field(DESC, "Set Robot Mode")
-    field(DTYP, "stream")
-    field(OUT,  "@Staubli2.proto set_mode($(BL)$(CS8_2)) $(PORT)")
-    field(ZRVL, "0")
-    field(ZRST, "Off")
-    field(ONVL, "1")
-    field(ONST, "Calibration")
-    field(TWVL, "2")
-    field(TWST, "Plate")
-    field(THVL, "3")
-    field(THST, "PlateScan")
-    field(FRVL, "4")
-    field(FRST, "PlateScanR")
-    field(FVVL, "5")
-    field(FVST, "AutoCrystal")
-    field(SXVL, "6")
-    field(SXST, "Free")
-}
-
-record(mbbo, "$(BL)$(CS8_2):ChangeTool")
-{
-    field(DESC, "Change Robot Tool")
-    field(DTYP, "stream")
-    field(OUT,  "@Staubli2.proto change_tool($(BL)$(CS8_2)) $(PORT)")
-    field(ZRVL, "0")
-    field(ZRST, "Flange")
-    field(ONVL, "1")
-    field(ONST, "Ops")
-    field(TWVL, "2")
-    field(TWST, "Spike")
-    field(THVL, "3")
-    field(THST, "Gripper")
-    field(FRVL, "4")
-    field(FRST, "Plate1")
-    field(FVVL, "5")
-    field(FVST, "Plate2")
-    field(SXVL, "6")
-    field(SXST, "Plate3")
-    field(SVVL, "7")
-    field(SVST, "Sample")
-    field(EIVL, "8")
-    field(EIST, "Microscope")
-    field(NIVL, "9")
-    field(NIST, "Free")
-}
-
-record(ao,"$(BL)$(CS8_2):MoveX")
-{
-  field(DESC,"Move in X direction")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto move_x($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ao, "$(BL)$(CS8_2):MoveY")
-{
-  field(DESC,"Move in Y direction")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto move_y($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ao, "$(BL)$(CS8_2):MoveZ")
-{
-  field(DESC,"Move in Z direction")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto move_z($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ao, "$(BL)$(CS8_2):MoveOmega")
-{
-  field(DESC,"Move sixth joint by Omega")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto move_omega($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ai,"$(BL)$(CS8_2):GetX")
-{
-  field(DESC,"Get position X")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto get_x($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ai,"$(BL)$(CS8_2):GetY")
-{
-  field(DESC,"Get position Y")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto get_y($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ai,"$(BL)$(CS8_2):GetZ")
-{
-  field(DESC,"Get position Z")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto get_z($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(ai,"$(BL)$(CS8_2):GetOmega")
-{
-  field(DESC,"Get sixth joint angle Omega")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto get_omega($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(stringin,"$(BL)$(CS8_2):Here")
-{
-  field(DESC,"Get arm tool position")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto here($(BL)$(CS8_2)) $(PORT)")
-}
-
-record(mbbi,"$(BL)$(CS8_2):CheckMoving")
-{
-  field(DESC,"Check if robot is moving")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto check_moving($(BL)$(CS8_2)) $(PORT)")
-  field(ZRVL, "0")
-  field(ZRST, "Moving")
-  field(ONVL, "1")
-  field(ONST, "Stopped")
-}
-
-record(mbbi,"$(BL)$(CS8_2):WorkingMode")
-{
-  field(DESC,"Get robot VAL3 working mode")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto working_mode($(BL)$(CS8_2)) $(PORT)")
-  field(ZRVL, "0")
-  field(ZRST, "Error/Invalid")
-  field(ONVL, "1")
-  field(ONST, "Manual")
-  field(TWVL, "2")
-  field(TWST, "Teste")
-  field(THVL, "3")
-  field(THST, "Local")
-  field(FRVL, "4")
-  field(FRST, "Remoto")
-}
-
-record(mbbi,"$(BL)$(CS8_2):Status")
-{
-  field(DESC,"Get robot movement status")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto status($(BL)$(CS8_2)) $(PORT)")
-  field(ZRVL, "0")
-  field(ZRST, "Movimento programado")
-  field(ONVL, "1")
-  field(ONST, "Movimento de correcao")
-  field(TWVL, "2")
-  field(TWST, "Parado(Remoto)")
-  field(THVL, "3")
-  field(THST, "Cartesiano(Manual)")
-  field(FRVL, "4")
-  field(FRST, "Ferramenta(Manual)")
-  field(FVVL, "5")
-  field(FVST, "Ponto(Manual)")
-  field(SXVL, "6")
-  field(SXST, "Parado(Manual)")
-}
-
-record(mbbi,"$(BL)$(CS8_2):Stopped")
-{
-  field(DESC,"check if robot is stopped")
-  field(DTYP,"stream")
-  field(INP,"@Staubli2.proto stopped($(BL)$(CS8_2)) $(PORT)")
-  field(ZRVL, "0")
-  field(ZRST, "Robo em movimento")
-  field(ONVL, "1")
-  field(ONST, "Robo parado")
-}
-
-record(mbbo, "$(BL)$(CS8_2):UseGripper")
-{
-  field(DESC,"1 to open gripper and 0 to close it")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto use_gripper($(BL)$(CS8_2)) $(PORT)")
-  field(ZRVL, "0")
-  field(ZRST, "Close")
-  field(ONVL, "1")
-  field(ONST, "Open")
-}
-
-record(mbbo, "$(BL)$(CS8_2):GoHome")
-{
-  field(DESC,"Sendo robot do default position")
-  field(DTYP,"stream")
-  field(OUT,"@Staubli2.proto go_home($(BL)$(CS8_2)) $(PORT)")
-  field(ZRVL, "0")
-  field(ZRST, "Close")
-  field(ONVL, "1")
-  field(ONST, "Open")
-}
-
-record(seq, "$(BL)$(CS8_2):_seq"){
-  field(LNK1, "$(BL)$(CS8_2):GetAccel.PROC")
-  field(LNK2, "$(BL)$(CS8_2):GetVelJ.PROC")
-  field(LNK3, "$(BL)$(CS8_2):GetVelL.PROC")
-  field(LNK4, "$(BL)$(CS8_2):GetVelR.PROC")
-  field(LNK5, "$(BL)$(CS8_2):GetOmega.PROC")
-  field(LNK6, "$(BL)$(CS8_2):GetX.PROC")
-  field(LNK7, "$(BL)$(CS8_2):GetY.PROC")
-  field(LNK8, "$(BL)$(CS8_2):GetZ.PROC")
+#############################################      seq RECORD BEGINNING     ##########################################
+record(seq, "$(BL)$(CS8_2):_seq1"){
+  field(LNK1, "$(BL)$(CS8_2):GetFrame.PROC")
+  field(LNK2, "$(BL)$(CS8_2):GetTool.PROC")
+  field(LNK3, "$(BL)$(CS8_2):GetLoop.PROC")
+  field(LNK4, "$(BL)$(CS8_2):GetLoopA.PROC")
+  field(LNK5, "$(BL)$(CS8_2):GetLoopB.PROC")
+  field(LNK6, "$(BL)$(CS8_2):GetLoopC.PROC")
+  field(LNK7, "$(BL)$(CS8_2):GetPlate.PROC")
+  field(LNK8, "$(BL)$(CS8_2):IsSettled.PROC")
+  field(LNK9, "$(BL)$(CS8_2):IsEmpty.PROC")
+#  field(LNKA, "$(BL)$(CS8_2):GetZ.PROC")
   field(PINI, "YES")
   field(SCAN, "1 second")
 }
 
 record(seq, "$(BL)$(CS8_2):_seq2"){
-  field(LNK1, "$(BL)$(CS8_2):GetTool.PROC")
-  field(LNK2, "$(BL)$(CS8_2):GetFrame.PROC")
-  #field(LNK3, "$(BL)$(CS8_2):CheckMoving.PROC")
-  field(LNK3, "$(BL)$(CS8_2):WorkingMode.PROC")
-  field(LNK4, "$(BL)$(CS8_2):Status.PROC")
-  field(LNK5, "$(BL)$(CS8_2):Stopped.PROC")
+  field(LNK1, "$(BL)$(CS8_2):GetX.PROC")
+  field(LNK2, "$(BL)$(CS8_2):GetY.PROC")
+  field(LNK3, "$(BL)$(CS8_2):GetZ.PROC")
+#  field(LNK4, "$(BL)$(CS8_2):.PROC")
+#  field(LNK5, "$(BL)$(CS8_2):.PROC")
+#  field(LNK6, "$(BL)$(CS8_2):.PROC")
+#  field(LNK7, "$(BL)$(CS8_2):.PROC")
+#  field(LNK8, "$(BL)$(CS8_2):.PROC")
+#  field(LNK9, "$(BL)$(CS8_2):.PROC")
+#  field(LNKA, "$(BL)$(CS8_2):.PROC")
   field(PINI, "YES")
   field(SCAN, "1 second")
 }
+
+#record(seq, "$(BL)$(CS8_2):_seq3"){
+#  field(LNK1, "$(BL)$(CS8_2):.PROC")
+#  field(LNK2, "$(BL)$(CS8_2):.PROC")
+#  field(LNK3, "$(BL)$(CS8_2):.PROC")
+#  field(LNK4, "$(BL)$(CS8_2):.PROC")
+#  field(LNK5, "$(BL)$(CS8_2):.PROC")
+#  field(LNK6, "$(BL)$(CS8_2):.PROC")
+#  field(LNK7, "$(BL)$(CS8_2):.PROC")
+#  field(LNK8, "$(BL)$(CS8_2):.PROC")
+#  field(LNK9, "$(BL)$(CS8_2):.PROC")
+#  field(LNKA, "$(BL)$(CS8_2):.PROC")
+#  field(PINI, "YES")
+#  field(SCAN, "1 second")
+#}
+
+#############################################         seq RECORD END         ##########################################
+
