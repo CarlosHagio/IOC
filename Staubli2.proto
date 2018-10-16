@@ -1,0 +1,286 @@
+RadTimeout = 100;
+PollPeriod = 100;
+ReplyTimeout = 3000;
+OutTerminator = "";
+InTerminator = "\r";
+ExtraInput = Ignore;
+
+error
+{ in "NACK: %(\$1:ERRCMD.VAL)s is not successful.";
+}
+
+#################################	MOVEMENTS BEGIN	#################################
+move_home_to_rack
+{ out "moveHomeToRack";
+  in "ACK: moveHomeToRack"; @mismatch{error;};
+}
+
+move_rack_to_home
+{ out "moveRackToHome";
+  in "ACK: moveRackToHome"; @mismatch{error;};
+}
+
+move_home_to_dewar
+{ out "moveHomeToDewar";
+  in "ACK: moveHomeToDewar"; @mismatch{error;};
+}
+
+move_dewar_to_home
+{ out "moveDewarToHome";
+  in "ACK: moveDewarToHome"; @mismatch{error;};
+}
+
+move_home_to_hotel
+{ out "moveHomeToHotel";
+  in "ACK: moveHomeToHotel"; @mismatch{error;};
+}
+
+move_hotel_to_home
+{ out "moveHotelToHome";
+  in "ACK: moveHotelToHome"; @mismatch{error;};
+}
+
+move_home_to_beam
+{ out "moveHomeToBeam";
+  in "ACK: moveHomeToBeam"; @mismatch{error;};
+}
+
+move_beam_to_home
+{ out "moveBeamToHome";
+  in "ACK: moveBeamToHome"; @mismatch{error;};
+}
+
+move_rack_to_hotel
+{ out "moveRackToHotel";
+  in "ACK: moveRackToHotel"; @mismatch{error;};
+}
+
+move_hotel_to_rack
+{ out "moveHotelToRack";
+  in "ACK: moveHotelToRack"; @mismatch{error;};
+}
+
+move_rack_to_dewar
+{ out "moveRackToDewar";
+  in "ACK: moveRackToDewar"; @mismatch{error;};
+}
+
+move_dewar_to_rack
+{ out "moveDewarToRack";
+  in "ACK: moveDewarToRack"; @mismatch{error;};
+}
+
+move_hotel_to_beam
+{ out "moveHotelToBeam";
+  in "ACK: moveHotelToBeam"; @mismatch{error;};
+}
+
+move_beam_to_hotel
+{ out "moveBeamToHotel";
+  in "ACK: moveBeamToHotel"; @mismatch{error;};
+}
+
+move_dewar_to_beam
+{ out "moveDewarToBeam";
+  in "ACK: moveDewarToBeam"; @mismatch{error;};
+}
+
+move_beam_to_dewar
+{ out "moveBeamToDewar";
+  in "ACK: moveBeamToDewar"; @mismatch{error;};
+}
+
+move_home
+{ out "moveHome %d";
+  in "ACK: moveHome"; @mismatch{error;};
+}
+
+move_rack
+{ out "moveRack %d";
+  in "ACK: moveRack %d"; @mismatch{error;};
+}
+
+move_hotel
+{ out "moveHotel %d";
+  in "ACK: moveHotel %d"; @mismatch{error;};
+}
+
+move_dewar
+{ out "moveDewar %d";
+  in "ACK: moveDewar %d"; @mismatch{error;};
+}
+
+move_dewar_a
+{ out "moveDewarA %d";
+  in "ACK: moveDewarA %d"; @mismatch{error;};
+}
+
+move_dewar_b
+{ out "moveDewarB %d";
+  in "ACK: moveDewarB %d"; @mismatch{error;};
+}
+
+move_dewar_c
+{ out "moveDewarC %d";
+  in "ACK: moveDewarC %d"; @mismatch{error;};
+}
+
+move_beam
+{ out "moveBeam %d";
+  in "ACK: moveBeam %d"; @mismatch{error;};
+}
+
+move_test
+{ out "moveTest %d";
+  in "ACK: moveTest %d"; @mismatch{error;};
+}
+#################################	MOVEMENTS END	#################################
+
+#################################	CONTROL BEGIN	#################################
+power
+{ out "power %d";
+  in "ACK: power %d"; @mismatch{error;};
+}
+
+gripper
+{ out "gripper %d";
+  in "ACK: gripper %d"; @mismatch{error;};
+}
+
+stop_move
+{ out "stopMove %d";
+  in "ACK: stopMove %d"; @mismatch{error;};
+}
+
+delete_move
+{ out "deleteMove";
+  in "ACK: deteleMove"; @mismatch{error;};
+}
+
+is_settled
+{ out "isSettled";
+  in "ACK: isSettled %d"; @mismatch{error;};
+}
+
+is_empty
+{ out "isEmpty";
+  in "ACK: isEmpty %d"; @mismatch{error;};
+}
+#################################	CONTROL END	#################################
+
+#################################	VARIABLES BEGIN	#################################
+set_move_beam_x
+{ out "setMoveBeamX %f";
+  in "ACK: setMoveBeamX %f"; @mismatch{error;};
+}
+
+set_move_beam_y
+{ out "setMoveBeamY %f";
+  in "ACK: setMoveBeamY %f"; @mismatch{error;};
+}
+
+set_move_beam_z
+{ out "setMoveBeamZ %f";
+  in "ACK: setMoveBeamZ %f"; @mismatch{error;};
+}
+
+set_frame
+{ out "setFrame %d";
+  in "ACK: setFrame %d"; @mismatch{error;};
+}
+
+set_tool
+{ out "setTool %d";
+  in "ACK: setTool %d"; @mismatch{error;};
+}
+
+set_puck
+{ out "setPuck %d";
+  in "ACK: setPuck %d"; @mismatch{error;};
+}
+
+set_loop_a
+{ out "setLoopA %d";
+  in "ACK: setLoopA %d"; @mismatch{error;};
+}
+
+set_loop_b
+{ out "setLoopB %d";
+  in "ACK: setLoopB %d"; @mismatch{error;};
+}
+
+set_loop_c
+{ out "setLoopC %d";
+  in "ACK: setLoopC %d"; @mismatch{error;};
+}
+
+set_plate
+{ out "setPlate %d";
+  in "ACK: setPlate %d"; @mismatch{error;};
+}
+
+get_x
+{ out "getX ";
+  in "ACK: getX %f"; @mismatch{error;};
+}
+
+get_y
+{ out "getY ";
+  in "ACK: getY %f"; @mismatch{error;};
+}
+
+get_z
+{ out "getZ ";
+  in "ACK: getZ %f"; @mismatch{error;};
+}
+get_move_beam_x
+{ out "getMoveBeamX ";
+  in "ACK: getMoveBeamX %f"; @mismatch{error;};
+}
+
+get_move_beam_y
+{ out "getMoveBeamY ";
+  in "ACK: getMoveBeamY %f"; @mismatch{error;};
+}
+
+get_move_beam_z
+{ out "getMoveBeamZ ";
+  in "ACK: getMoveBeamZ %f"; @mismatch{error;};
+}
+
+get_frame
+{ out "getFrame ";
+  in "ACK: getFrame %d"; @mismatch{error;};
+}
+
+get_tool
+{ out "getTool ";
+  in "ACK: getTool %d"; @mismatch{error;};
+}
+
+get_puck
+{ out "getPuck ";
+  in "ACK: getPuck %d"; @mismatch{error;};
+}
+
+get_loop_a
+{ out "getLoopA ";
+  in "ACK: getLoopA %d"; @mismatch{error;};
+}
+
+get_loop_b
+{ out "getLoopB ";
+  in "ACK: getLoopB %d"; @mismatch{error;};
+}
+
+get_loop_c
+{ out "getLoopC ";
+  in "ACK: getLoopC %d"; @mismatch{error;};
+}
+
+get_plate
+{ out "getPlate ";
+  in "ACK: getPlate %d"; @mismatch{error;};
+}
+#################################	VARIABLES END	#################################
+
