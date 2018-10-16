@@ -194,9 +194,15 @@ set_tool
   in "ACK: setTool %d"; @mismatch{error;};
 }
 
+<<<<<<< HEAD
 set_puck
 { out "setPuck %d";
   in "ACK: setPuck %d"; @mismatch{error;};
+=======
+set_loop
+{ out "setLoop %d";
+  in "ACK: setLoop %d"; @mismatch{error;};
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
 }
 
 set_loop_a
@@ -220,40 +226,69 @@ set_plate
 }
 
 get_x
+<<<<<<< HEAD
 { out "getX ";
+=======
+{ out "getX";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getX %f"; @mismatch{error;};
 }
 
 get_y
+<<<<<<< HEAD
 { out "getY ";
+=======
+{ out "getY";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getY %f"; @mismatch{error;};
 }
 
 get_z
+<<<<<<< HEAD
 { out "getZ ";
   in "ACK: getZ %f"; @mismatch{error;};
 }
 get_move_beam_x
 { out "getMoveBeamX ";
+=======
+{ out "getZ";
+  in "ACK: getZ %f"; @mismatch{error;};
+}
+get_move_beam_x
+{ out "getMoveBeamX";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getMoveBeamX %f"; @mismatch{error;};
 }
 
 get_move_beam_y
+<<<<<<< HEAD
 { out "getMoveBeamY ";
+=======
+{ out "getMoveBeamY";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getMoveBeamY %f"; @mismatch{error;};
 }
 
 get_move_beam_z
+<<<<<<< HEAD
 { out "getMoveBeamZ ";
+=======
+{ out "getMoveBeamZ";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getMoveBeamZ %f"; @mismatch{error;};
 }
 
 get_frame
+<<<<<<< HEAD
 { out "getFrame ";
+=======
+{ out "getFrame";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getFrame %d"; @mismatch{error;};
 }
 
 get_tool
+<<<<<<< HEAD
 { out "getTool ";
   in "ACK: getTool %d"; @mismatch{error;};
 }
@@ -265,21 +300,46 @@ get_puck
 
 get_loop_a
 { out "getLoopA ";
+=======
+{ out "getTool";
+  in "ACK: getTool %d"; @mismatch{error;};
+}
+
+get_loop
+{ out "getLoop";
+  in "ACK: getLoop %d"; @mismatch{error;};
+}
+
+get_loop_a
+{ out "getLoopA";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getLoopA %d"; @mismatch{error;};
 }
 
 get_loop_b
+<<<<<<< HEAD
 { out "getLoopB ";
+=======
+{ out "getLoopB";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getLoopB %d"; @mismatch{error;};
 }
 
 get_loop_c
+<<<<<<< HEAD
 { out "getLoopC ";
+=======
+{ out "getLoopC";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getLoopC %d"; @mismatch{error;};
 }
 
 get_plate
+<<<<<<< HEAD
 { out "getPlate ";
+=======
+{ out "getPlate";
+>>>>>>> f3328664de960ee047f3d5f01953e31ab9869baa
   in "ACK: getPlate %d"; @mismatch{error;};
 }
 #################################	VARIABLES END	#################################
